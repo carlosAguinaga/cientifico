@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
 
+:root {
+  --white: '#fff';
+  --sofo-oreage: 
+}
+
+
 body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
   color: #3c484e;
   font-family: 'Open Sans', sans-serif;
+  transition: .5s ease all;
+}
+
+body.darkmode {
+  background-color: #0a0b0d;
 }
 
 .Header-main {
@@ -14,9 +25,22 @@ body {
   align-items: center;
 }
 
+.Header-nav {
+  display: flex;
+}
+
+.Header-nav a{
+  align-self: center;
+}
+
 .Header a {
   text-decoration: none;
   color: #15302C;
+}
+
+body.darkmode Header a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .Main {
@@ -50,6 +74,11 @@ body {
   animation-name: fade;
 }
 
+body.darkmode .Characters-card {
+  background: #202021;
+  color: white;
+}
+
 .Characters-card img {
   width: 100%;
   height: auto;
@@ -79,6 +108,10 @@ body {
   animation-name: fade;
 }
 
+body.darkmode .Characters-item {
+  background: #202021;
+}
+
 .Characters-item img {
   width: 100%;
   height: auto;
@@ -95,7 +128,12 @@ body {
 
 .Characters-item a {
   text-decoration: none;
-  color: #026C86;
+  color: #014454;
+}
+
+
+body.darkmode .Characters-item a {
+  color: white;
 }
 
 @keyframes fade {
@@ -120,3 +158,54 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+.switch {
+  background-color: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  margin-left: 20px;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0 , 0, 0, .2);
+}
+
+.switch.active {
+  background: orange;
+  color: #000;
+}
+
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: #fff; 
+}
+
+
+
+
+
