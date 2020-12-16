@@ -1,5 +1,6 @@
 const Header = () => {
 
+
   const view = `
     <div class="Header-main">
       <div class="Header-logo">
@@ -13,6 +14,10 @@ const Header = () => {
        <a href="#/about/">
         About  
        </a>
+       <button class="switch" id="switch">
+        <span><i class="fas fa-sun"></i></span>
+        <span><i class="fas fa-moon"></i></span>
+       </button>
       </div>
     </div>`;
 
