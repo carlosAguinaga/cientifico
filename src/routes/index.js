@@ -26,9 +26,26 @@ const router = async () => {
   const btnSwith = document.querySelector("#switch");
 
   btnSwith.addEventListener("click", () => {
-    document.body.classList.toggle('darkmode');
-    btnSwith.classList.toggle('active');
+    document.body.classList.toggle("darkmode");
+    btnSwith.classList.toggle("active");
+
+    //save mode in local storage
+    if (document.body.classList.contains('darkmode')) {
+      localStorage.setItem('dark-mode', true);
+    }else{
+      localStorage.setItem('dark-mode', false);
+    }
   });
+
+// Obtenemos el modo actual
+if(localStorage.getItem('dark-mode') === 'true'){
+  document.body.classList.add('darkmode');
+  btnSwith.classList.add("active");
+}else{
+  document.body.classList.remove('darkmode');
+  btnSwith.classList.remove("active");
+}
+
 };
 
 export default router;
